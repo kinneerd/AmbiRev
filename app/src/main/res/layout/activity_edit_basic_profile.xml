@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/ColorPrimary"
+    tools:context="com.dan.tute.EditBasicProfile">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/change_name"
+        android:ems="10"
+        android:id="@+id/editNameField"
+        android:layout_marginTop="32dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:layout_below="@+id/profEmailAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/profEmailAddress"
+        android:text="@string/email_placeholder"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:layout_below="@+id/profileImage"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editMajorField"
+        android:layout_marginTop="38dp"
+        android:hint="@string/change_major"
+        android:textColorHint="#b4ffffff"
+        android:layout_below="@+id/editNameField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#b4ffffff"/>
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:src = "@drawable/defaultsmallpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:maxHeight="100dip"
+        android:maxWidth="250dip"
+        android:minHeight="100dip"
+        android:minWidth="250dip"
+        android:resizeMode="horizontal|vertical"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/default_profile_image"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:id="@+id/editProfileSubmitButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editBioField"
+        android:layout_below="@+id/editMajorField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp"
+        android:hint="@string/edit_description"
+        android:gravity="top"
+        android:isScrollContainer="true"
+        android:maxLength="200"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:enabled="true"
+        android:layout_above="@+id/editProfileSubmitButton" />
+
+
+</RelativeLayout>
