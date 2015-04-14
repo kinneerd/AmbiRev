@@ -5,6 +5,9 @@
 // NAV DRAWER
     <string name="drawer_item_home">Home</string>
     <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_search">Tutor Search</string>
+    <string name="drawer_item_request">Tutor Request</string>
+    <string name="drawer_item_recent">Recent Connections</string>
 
 
 //SIGN IN PAGE
