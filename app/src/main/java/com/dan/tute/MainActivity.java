@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
@@ -40,13 +41,20 @@ public class MainActivity extends ActionBarActivity {
 
         setSupportActionBar(toolbar);   // Setting toolbar as the ActionBar with setSupportActionBar() call
 
-        // build nav drawer
-        //myDrawer.withActivity(this).build();
-        Drawer.Result navDrawer = new Drawer()
+        /*
+        // Creating Navigation Drawer Header
+        AccountHeader headerResult = new AccountHeader()
+                .withActivity(this)
+                .withHeaderBackground()
+        */
+
+        // Creating Navigation Drawer
+        Drawer.Result drawerResult = new Drawer()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(R.drawable.ic_home),
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_home).withIcon(R.drawable.ic_home),
+                        new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_search).withIcon(R.drawable.ic_search),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_request).withIcon(R.drawable.ic_request),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_recent).withIcon(R.drawable.ic_recent),
