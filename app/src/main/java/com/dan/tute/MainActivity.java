@@ -75,7 +75,8 @@ public class MainActivity extends ActionBarActivity {
                         //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                         //drawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
                     }
-                })*/
+                })
+                */
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
