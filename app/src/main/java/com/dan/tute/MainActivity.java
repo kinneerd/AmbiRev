@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
@@ -27,11 +28,10 @@ public class MainActivity extends ActionBarActivity {
     @InjectView(R.id.create_request) protected TextView mCreate_Request;
     @InjectView(R.id.search_tutor) protected TextView mSearch_tutor;
     @InjectView(R.id.edit_profile) protected TextView mEdit_Profile;
+
     @InjectView(R.id.tool_bar) protected Toolbar toolbar;
 
-    // Initialize nav drawer
-    //Drawer myDrawer = new Drawer();
-    // comment
+    protected Drawer.Result drawer = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
         */
 
         // Creating Navigation Drawer
-        Drawer.Result drawerResult = new Drawer()
+        drawer = new Drawer()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(
@@ -60,7 +60,22 @@ public class MainActivity extends ActionBarActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_recent).withIcon(R.drawable.ic_recent),
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(R.drawable.ic_settings)
-                )
+                )/*
+                .withOnDrawerListener(new Drawer.OnDrawerListener() {
+                    @Override
+                    public void onDrawerOpened(View drawerView) {
+                        Toast.makeText(MainActivity.this, "onDrawerOpened", Toast.LENGTH_SHORT).show();
+                        //drawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+                        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                    }
+
+                    @Override
+                    public void onDrawerClosed(View drawerView) {
+                        Toast.makeText(MainActivity.this, "onDrawerClosed", Toast.LENGTH_SHORT).show();
+                        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        //drawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+                    }
+                })*/
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
