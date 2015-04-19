@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,17 +21,19 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import org.w3c.dom.Text;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    @InjectView(R.id.create_request) protected Button mCreate_Request;
-    @InjectView(R.id.search_tutor) protected Button mSearch_tutor;
-    @InjectView(R.id.edit_profile) protected Button mEdit_Profile;
+    @InjectView(R.id.create_request) protected ImageButton mCreate_Request;
+    @InjectView(R.id.search_tutor) protected ImageButton mSearch_tutor;
+   // @InjectView(R.id.edit_profile) protected Button mEdit_Profile;
     @InjectView(R.id.tool_bar) protected Toolbar toolbar;
-    @InjectView(R.id.tutorSignUp) protected Button mSignUpTutor;
+    @InjectView(R.id.tutorSignUp) protected TextView mSignUpTutor;
 
     protected Drawer.Result drawer = null;
 
@@ -104,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
+/*
         mEdit_Profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
+*/
         mSignUpTutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
