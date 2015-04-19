@@ -17,4 +17,13 @@
     <dimen name="sign_up_your_login_info_vertical_margin">16dp</dimen>
     <dimen name="sign_up_your_login_info_horizontal_padding">10dp</dimen>
     <dimen name="sign_up_your_login_info_vertical_padding">5dp</dimen>
+
+
+
+    <!-- CARD DESIGN -->
+
+    <dimen name="card_vertical_margin">16dp</dimen>
+    <dimen name="card_horizontal_padding">10dp</dimen>
+    <dimen name="card_vertical_padding">5dp</dimen>
+
 </resources>

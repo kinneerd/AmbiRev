@@ -41,4 +41,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign up as tutor"
+        android:id="@+id/tutorSignUp"
+        android:layout_below="@+id/create_request"
+        android:layout_alignRight="@+id/search_tutor"
+        android:layout_alignEnd="@+id/search_tutor"
+        android:layout_marginTop="36dp" />
+
 </RelativeLayout>

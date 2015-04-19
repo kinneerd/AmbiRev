@@ -5,6 +5,7 @@
     <color name="accent">#4db6ac</color>
     <color name="light_teal_button">#80CBC4</color>
     <color name="pressed_teal_button">#4DB6AC</color>
-    <color name="text_color">#004D40</color>
+    <color name="text_color">#212121</color>
     <color name="light_gray">#bbbbbb</color>
+    <color name="button">#B6B6B6</color>
 </resources>
