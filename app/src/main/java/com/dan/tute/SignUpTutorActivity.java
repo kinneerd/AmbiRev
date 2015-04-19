@@ -1,24 +1,41 @@
 package com.dan.tute;
 
+import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import org.w3c.dom.Text;
+
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class SignUpTutorActivity extends ActionBarActivity {
 
-      @InjectView(R.id.tutor_prof_name) protected Text mTutor_Name;
-      @InjectView(R.id.tutor_prof_name_last) protected Text mTutor_Name_Last;
-    //@InjectView(R.id.tutor_prof_price) protected Text mTutor_Price;
-    //@InjectView(R.id.male_tutor) protected Text mTutor_Male;
-    //@InjectView(R.id.female_tutor) protected Text mTutor_Female;
+      @InjectView(R.id.tutor_prof_name) protected TextView mTutor_Name;
+      @InjectView(R.id.tutor_prof_name_last) protected TextView mTutor_Name_Last;
+      @InjectView(R.id.tutor_tag_1) protected TextView mTutor_Tag_1;
+      @InjectView(R.id.tutor_tag_2) protected TextView mTutor_Tag_2;
+      @InjectView(R.id.tutor_tag_3) protected TextView mTutor_Tag_3;
+      @InjectView(R.id.major_spinner) protected Spinner mDropdown_Major_list;
+      @InjectView(R.id.price_spinner) protected Spinner mDropdown_Price_list;
+      @InjectView(R.id.tutor_continue_button) protected Button mTutor_continue_button;
+     @InjectView(R.id.tutor_cancel_button) protected Button mTutor_cancel_button;
 
       private String[] majors;
       private String[] prices;
+      private TypedArray major_type;
+      private TypedArray price_type;
+      private String major;
+      private String price;
 
 
 
@@ -26,20 +43,74 @@ public class SignUpTutorActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_tutor);
+        ButterKnife.inject(this);
 
         //creating major spinner
-        Spinner dropdown = (Spinner)findViewById(R.id.major_spinner);
         majors = getResources().getStringArray(R.array.major_list);
+        major_type = getResources().obtainTypedArray(R.array.major_list);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,majors);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown.setAdapter(dataAdapter);
+        mDropdown_Major_list.setAdapter(dataAdapter);
 
         //create price spinner
-        Spinner dropdownPrice = (Spinner)findViewById(R.id.price_spinner);
         prices = getResources().getStringArray(R.array.price_list);
+        price_type = getResources().obtainTypedArray(R.array.price_list);
         ArrayAdapter<String> dataAdapterPrice = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,prices);
         dataAdapterPrice.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdownPrice.setAdapter(dataAdapterPrice);
+        mDropdown_Price_list.setAdapter(dataAdapterPrice);
+
+
+        // SET MAJOR AND PRICE SELECTION
+        mDropdown_Major_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                major = major_type.getString(mDropdown_Major_list.getSelectedItemPosition());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        mDropdown_Price_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                price = price_type.getString(mDropdown_Price_list.getSelectedItemPosition());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //SEND DATA TO SIGN UP TUTOR DETAIL
+        mTutor_continue_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),SignUpTutorDetailActivity.class);
+                String firstName = mTutor_Name.getText().toString();
+                String lastName = mTutor_Name_Last.getText().toString();
+                String tags = mTutor_Tag_1.getText().toString() + " " + mTutor_Tag_2.getText().toString() + " " + mTutor_Tag_3.getText().toString();
+                intent.putExtra("firstName",firstName);
+                intent.putExtra("lastName",lastName);
+                intent.putExtra("tags",tags);
+                intent.putExtra("major",major);
+                intent.putExtra("price",price);
+                startActivity(intent);
+            }
+            // ADD STATEMENT FOR EMPTY FIELDS AFTER TESTING
+        });
+
+        mTutor_cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

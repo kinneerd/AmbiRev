@@ -61,6 +61,10 @@
             android:name=".SignUpTutorActivity"
             android:label="@string/title_activity_sign_up_tutor" >
         </activity>
+        <activity
+            android:name=".SignUpTutorDetailActivity"
+            android:label="@string/title_activity_sign_up_tutor_detail" >
+        </activity>
     </application>
 
 </manifest>
