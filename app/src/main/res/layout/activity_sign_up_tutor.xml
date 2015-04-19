@@ -37,7 +37,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/tutor_prof_name"
-            android:hint="@string/name_hint" />
+            android:hint="@string/name_first_hint" />
 
         <EditText
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/tutor_prof_name_last"
-            android:hint="Last Name" />
+            android:hint="@string/name_last_hint" />
 
     </LinearLayout>
 

@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="@string/change_name"
+        android:hint="@string/change_first_name"
         android:ems="10"
-        android:id="@+id/editNameField"
+        android:id="@+id/editFirstNameField"
         android:layout_marginTop="32dp"
         android:textColor="@android:color/white"
         android:textColorHint="#b4ffffff"
@@ -44,13 +44,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editMajorField"
-        android:layout_marginTop="38dp"
         android:hint="@string/change_major"
         android:textColorHint="#b4ffffff"
-        android:layout_below="@+id/editNameField"
+        android:textColor="#b4ffffff"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#b4ffffff"/>
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/profileImage"
@@ -95,6 +94,19 @@
         android:textColorHint="#b4ffffff"
         android:enabled="true"
         android:layout_above="@+id/editProfileSubmitButton" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/change_last_name"
+        android:ems="10"
+        android:id="@+id/editLastNameField"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:layout_below="@+id/editFirstNameField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

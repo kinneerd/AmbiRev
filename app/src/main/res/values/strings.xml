@@ -24,7 +24,7 @@
     <string name="email_hint">Email</string>
     <string name="sign_up_button_label">Sign Up</string>
     <string name="your_info_title">Your Information</string>
-    <string name="name_hint">First Name</string>
+    <string name="name_first_hint">First Name</string>
     <string name="name_last_hint">Last Name</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
@@ -34,10 +34,11 @@
 
 //EDIT PROFILE PAGE
     <string name="title_activity_edit_basic_profile">EditBasicProfile</string>
-    <string name="change_name">name</string>
-    <string name="change_major">major</string>
-    <string name="email_placeholder">kinneerd@appstate.edu</string>
-    <string name="edit_description">tell us about yourself…</string>
+    <string name="change_first_name">First Name</string>
+    <string name="change_last_name">Last Name</string>
+    <string name="change_major">Major</string>
+    <string name="email_placeholder">Email Address</string>
+    <string name="edit_description">Tell us about yourself…</string>
 
     <string name="apply_button">Apply</string>
 

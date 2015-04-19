@@ -61,8 +61,16 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/nameField"
-            android:hint="@string/name_hint" />
+            android:id="@+id/firstNameField"
+            android:hint="@string/name_first_hint" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/lastNameField"
+            android:hint="@string/name_last_hint" />
 
         <RadioGroup
             android:id="@+id/radioGender"
