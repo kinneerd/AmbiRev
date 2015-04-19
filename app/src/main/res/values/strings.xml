@@ -66,7 +66,115 @@
     <string name="title_activity_sign_up_tutor_detail">SignUpTutorDetailActivity</string>
 
 
+//General strings
+    <string name = "price">Price</string>
 
 
+
+
+
+// price dropdown strings
+    <string-array name="price_list">
+        <item>$1.00</item>
+        <item>$2.00</item>
+        <item>$3.00</item>
+        <item>$4.00</item>
+        <item>$5.00</item>
+        <item>$6.00</item>
+        <item>$7.00</item>
+        <item>$8.00</item>
+        <item>$9.00</item>
+        <item>$10.00</item>
+        <item>$15.00</item>
+        <item>$20.00</item>
+    </string-array>
+
+// major dropdown strings
+
+    <string-array name="major_list">
+       <item>Accounting</item>
+       <item>Anthropology</item>
+       <item>Apparel Design</item>
+       <item>Applied Music</item>
+       <item>Arabic</item>
+       <item>Art</item>
+       <item>Astronomy</item>
+       <item>Athletic Training</item>
+       <item>Biology</item>
+       <item>Business</item>
+       <item>Business Education</item>
+       <item>Chemistry</item>
+       <item>Chinese</item>
+       <item>Communication</item>
+       <item>Communication Disorders</item>
+       <item>Computer Information Systems</item>
+       <item>Computer Science</item>
+       <item>Criminal Justice</item>
+       <item>Curriculum and Instruction</item>
+       <item>Dance</item>
+       <item>Economics</item>
+       <item>Educational Foundations</item>
+       <item>Educational Leadership</item>
+       <item>Entrepreneurship</item>
+       <item>Environmental Science</item>
+       <item>Exercise Science</item>
+       <item>Family and Consumer Sciences</item>
+       <item>Fermentation Sciences</item>
+       <item>Finance, Banking and Insurance</item>
+       <item>French</item>
+       <item>Gender</item>
+       <item>General Science</item>
+       <item>Geography</item>
+       <item>German</item>
+       <item>Global Studies</item>
+       <item>Graphic Design</item>
+       <item>Health Care Management</item>
+       <item>Health Education</item>
+       <item>Health Promotion</item>
+       <item>Health and Physical Education</item>
+       <item>Higher Education</item>
+       <item>History</item>
+       <item>Honors</item>
+       <item>Hospitality Management</item>
+       <item>Industrial Design</item>
+       <item>Instructional Tech</item>
+       <item>Interdisciplinary Studies</item>
+       <item>Interior Design</item>
+       <item>Japanese</item>
+       <item>Languages, Literature, Culture</item>
+       <item>Law</item>
+       <item>Leadership</item>
+       <item>Library Science</item>
+       <item>Management</item>
+       <item>Marketing</item>
+       <item>Mathematics</item>
+       <item>Military Science</item>
+       <item>Music</item>
+       <item>Nursing</item>
+       <item>Nutrition</item>
+       <item>Philosophy</item>
+       <item>Physical Education</item>
+       <item>Physics</item>
+       <item>Planning</item>
+       <item>Political Science</item>
+       <item>Portuguese (this exists?)</item>
+       <item>Production Operations</item>
+       <item>Psychology</item>
+       <item>Public Administration</item>
+       <item>Reading</item>
+       <item>Recreation Management</item>
+       <item>Religious Studies</item>
+       <item>Research</item>
+       <item>Russian (Really?)</item>
+       <item>Social Work</item>
+       <item>Sociology (lol)</item>
+       <item>Spanish</item>
+       <item>Special Education</item>
+       <item>Statistics</item>
+       <item>Supply Chain Management</item>
+       <item>Sustainable Development</item>
+       <item>Technology</item>
+       <item>University Studies</item>
+    </string-array>
 
 </resources>

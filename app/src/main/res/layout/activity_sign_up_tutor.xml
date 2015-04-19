@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="What's your name?"
+        android:text="General Information:"
         android:layout_marginTop="30dp"
         android:id="@+id/card1Label"
         android:textColor="@android:color/white"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="What's your major?"
+        android:text="Tutor Information:"
         android:layout_marginTop="30dp"
         android:id="@+id/card2Label"
         android:textColor="@android:color/white"
@@ -73,11 +73,99 @@
             android:id="@+id/major_spinner"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:spinnerMode="dropdown"
             android:prompt="@string/change_major"/>
-
-
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/card3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card2"
+        android:layout_marginTop="10dp"
+        style="@style/card"
+        android:weightSum="1">
+
+    <Spinner
+        android:id="@+id/price_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/price"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tutor Tags: (What will you be tutoring?)"
+        android:layout_marginTop="30dp"
+        android:id="@+id/card4Label"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/card3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:id="@+id/card4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card4Label"
+        style="@style/card"
+        android:weightSum="1">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/tutor_tag_1"
+        android:hint="Accounting" />
+
+    <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:inputType="textPersonName"
+       android:ems="10"
+       android:id="@+id/tutor_tag_2"
+       android:hint="Business Calculus" />
+
+    <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:inputType="textPersonName"
+       android:ems="10"
+       android:id="@+id/tutor_tag_3"
+       android:hint="Economics" />
+
+    </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/card3"
+        android:layout_alignEnd="@+id/card3"
+        android:background="@drawable/button_custom"
+        android:layout_toEndOf="@+id/card4Label"
+        android:layout_toRightOf="@+id/card4Label" />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel "
+        android:id="@+id/button2"
+        android:background="@drawable/button_custom"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/card2Label"
+        android:layout_toEndOf="@+id/card2Label" />
 
 </RelativeLayout>
