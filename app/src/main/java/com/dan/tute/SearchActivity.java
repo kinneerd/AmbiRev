@@ -115,7 +115,7 @@ public class SearchActivity extends ListActivity {
                                 JSONObject t = jsonTutors.getJSONObject(i);
 
                                 HashMap m = new HashMap<String,String>();
-                                m.put("name", t.getString("name"));
+                                m.put("firstName", t.getString("firstName"));
                                 m.put("email", t.getString("email"));
                                 m.put("gender", t.getString("gender"));
                                 m.put("picture", t.getString("picture"));
@@ -146,8 +146,8 @@ public class SearchActivity extends ListActivity {
 
                     ListAdapter adapter = new SimpleAdapter(
                             SearchActivity.this, tutors,
-                            R.layout.tutor_list_item, new String[] {"email", "name", "price", "bio"},
-                            new int[] { R.id.email,R.id.name,R.id.price,R.id.bio,});
+                            R.layout.tutor_list_item, new String[] {"email", "firstName", "price", "bio"},
+                            new int[] { R.id.email,R.id.firstName,R.id.price,R.id.bio,});
 
                     setListAdapter(adapter);
                 }

@@ -31,6 +31,7 @@
     <string name="your_login_info_title">Your Log In Information</string>
     <string name="edu_email_hint">Email (.edu address required)</string>
     <string name="password_create_hint">Create a password</string>
+    <string name="tutor_description">What makes you a good tutor?</string>
 
 //EDIT PROFILE PAGE
     <string name="title_activity_edit_basic_profile">EditBasicProfile</string>

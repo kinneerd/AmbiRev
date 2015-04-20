@@ -20,8 +20,6 @@ import butterknife.InjectView;
 
 public class SignUpTutorActivity extends ActionBarActivity {
 
-      @InjectView(R.id.tutor_prof_name) protected TextView mTutor_Name;
-      @InjectView(R.id.tutor_prof_name_last) protected TextView mTutor_Name_Last;
       @InjectView(R.id.tutor_tag_1) protected TextView mTutor_Tag_1;
       @InjectView(R.id.tutor_tag_2) protected TextView mTutor_Tag_2;
       @InjectView(R.id.tutor_tag_3) protected TextView mTutor_Tag_3;
@@ -90,11 +88,7 @@ public class SignUpTutorActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SignUpTutorDetailActivity.class);
-                String firstName = mTutor_Name.getText().toString();
-                String lastName = mTutor_Name_Last.getText().toString();
                 String tags = mTutor_Tag_1.getText().toString() + " " + mTutor_Tag_2.getText().toString() + " " + mTutor_Tag_3.getText().toString();
-                intent.putExtra("firstName",firstName);
-                intent.putExtra("lastName",lastName);
                 intent.putExtra("tags",tags);
                 intent.putExtra("major",major);
                 intent.putExtra("price",price);
