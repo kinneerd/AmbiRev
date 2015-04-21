@@ -135,26 +135,13 @@
     </LinearLayout>
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/tutor_continue_button"
-        android:background="@drawable/button_custom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="Cancel "
-        android:id="@+id/tutor_cancel_button"
-        android:background="@drawable/button_custom"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="37dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/tutor_continue_button"
-        android:layout_toStartOf="@+id/tutor_continue_button" />
+        android:layout_below="@id/card4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_custom" />
 
 </RelativeLayout>

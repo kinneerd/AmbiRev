@@ -26,7 +26,7 @@ public class SignUpTutorActivity extends ActionBarActivity {
       @InjectView(R.id.major_spinner) protected Spinner mDropdown_Major_list;
       @InjectView(R.id.price_spinner) protected Spinner mDropdown_Price_list;
       @InjectView(R.id.tutor_continue_button) protected Button mTutor_continue_button;
-     @InjectView(R.id.tutor_cancel_button) protected Button mTutor_cancel_button;
+      //@InjectView(R.id.tutor_cancel_button) protected Button mTutor_cancel_button;
 
       private String[] majors;
       private String[] prices;
@@ -97,6 +97,7 @@ public class SignUpTutorActivity extends ActionBarActivity {
             // ADD STATEMENT FOR EMPTY FIELDS AFTER TESTING
         });
 
+        /*
         mTutor_cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,11 +105,7 @@ public class SignUpTutorActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
+        */
     }
 
 
