@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    style="@style/card"
     tools:context="com.dan.tute.SignUpActivity">
 
     <TextView
