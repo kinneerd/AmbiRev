@@ -67,7 +67,7 @@
             android:label="@string/title_activity_sign_up_tutor_detail" >
         </activity>
         <activity
-            android:name=".Make_Request_Activity"
+            android:name=".MakeRequestActivity"
             android:label="@string/title_activity_make__request_" >
         </activity>
     </application>

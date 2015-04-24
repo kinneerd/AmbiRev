@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.dan.tute.R;
-
-public class Make_Request_Activity extends ActionBarActivity {
+public class MakeRequestActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_make__request_);
+        setContentView(R.layout.activity_make_request_);
     }
 
 
