@@ -186,5 +186,6 @@
        <item>Technology</item>
        <item>University Studies</item>
     </string-array>
+    <string name="title_activity_make__request_">Make_Request_Activity</string>
 
 </resources>
