@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/experienceField"
+        android:id="@+id/bioField"
         android:hint="@string/edit_description"
         android:gravity="top"
         android:isScrollContainer="true"
@@ -46,7 +46,7 @@
         android:layout_marginTop="30dp"
         android:id="@+id/card2Label"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/experienceField"
+        android:layout_below="@+id/bioField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

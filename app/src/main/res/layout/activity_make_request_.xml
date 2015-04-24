@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/experienceField"
+        android:id="@+id/bioField"
         android:hint="What do you need help with?"
         android:gravity="top"
         android:isScrollContainer="true"
@@ -41,7 +41,7 @@
         android:layout_marginTop="49dp"
         android:id="@+id/requestTagsLabel"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/experienceField"
+        android:layout_below="@+id/bioField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 

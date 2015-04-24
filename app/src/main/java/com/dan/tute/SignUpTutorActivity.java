@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,13 +21,13 @@ import butterknife.InjectView;
 
 public class SignUpTutorActivity extends ActionBarActivity {
 
+      @InjectView(R.id.bioField) protected TextView mTutor_Bio;
       @InjectView(R.id.tutor_tag_1) protected TextView mTutor_Tag_1;
       @InjectView(R.id.tutor_tag_2) protected TextView mTutor_Tag_2;
       @InjectView(R.id.tutor_tag_3) protected TextView mTutor_Tag_3;
       @InjectView(R.id.major_spinner) protected Spinner mDropdown_Major_list;
       @InjectView(R.id.price_spinner) protected Spinner mDropdown_Price_list;
       @InjectView(R.id.tutor_continue_button) protected Button mTutor_continue_button;
-      //@InjectView(R.id.tutor_cancel_button) protected Button mTutor_cancel_button;
 
       private String[] majors;
       private String[] prices;
@@ -88,10 +89,12 @@ public class SignUpTutorActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SignUpTutorDetailActivity.class);
-                String tags = mTutor_Tag_1.getText().toString() + " " + mTutor_Tag_2.getText().toString() + " " + mTutor_Tag_3.getText().toString();
+                String bio = mTutor_Bio.getText().toString();
+                String tags = mTutor_Tag_1.getText().toString() + "," + mTutor_Tag_2.getText().toString() + "," + mTutor_Tag_3.getText().toString();
                 intent.putExtra("tags",tags);
                 intent.putExtra("major",major);
                 intent.putExtra("price",price);
+                intent.putExtra("bio",bio);
                 startActivity(intent);
             }
             // ADD STATEMENT FOR EMPTY FIELDS AFTER TESTING
