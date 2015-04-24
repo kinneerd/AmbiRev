@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -93,10 +94,11 @@ public class SignUpTutorDetailActivity extends ActionBarActivity {
 
             String experience = mTutor_Prof_1.getText().toString() + "," + mTutor_Prof_2.getText().toString() + "," + mTutor_Prof_3.getText().toString();
 
+            
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("major", intent.getStringExtra("major")));
             params.add(new BasicNameValuePair("tags", intent.getStringExtra("tags")));
-            params.add(new BasicNameValuePair("price", intent.getStringExtra("price")));
+            params.add(new BasicNameValuePair("price", intent.getStringExtra("price").substring(1)));
             params.add(new BasicNameValuePair("experience", experience));
             params.add(new BasicNameValuePair("bio", intent.getStringExtra("bio")));
             params.add(new BasicNameValuePair("email", currentEmail));
