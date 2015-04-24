@@ -18,7 +18,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="General Information:"
         android:layout_marginTop="30dp"
-        android:id="@+id/card1Label"
+        android:id="@+id/requestDescLabel"
         android:textColor="@android:color/white"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -36,7 +36,7 @@
         android:maxLines="4"
         style="@style/card"
         android:enabled="true"
-        android:layout_below="@+id/card1Label" />
+        android:layout_below="@+id/requestDescLabel" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
 
 
     <LinearLayout
-        android:id="@+id/card3"
+        android:id="@+id/requestPriceCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/card2"
@@ -93,17 +93,17 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Tutor Tags: (What will you be tutoring?)"
         android:layout_marginTop="30dp"
-        android:id="@+id/card4Label"
+        android:id="@+id/requestTagsLabel"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/card3"
+        android:layout_below="@+id/requestPriceCard"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <LinearLayout
-        android:id="@+id/card4"
+        android:id="@+id/requestTagCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/card4Label"
+        android:layout_below="@+id/requestTagsLabel"
         style="@style/card"
         android:weightSum="1">
 
@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/tutor_continue_button"
-        android:layout_below="@id/card4"
+        android:layout_below="@id/requestTagCard"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/button_custom" />
