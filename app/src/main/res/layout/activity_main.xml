@@ -28,7 +28,7 @@
         android:layout_height="70dp"
         android:text="New Button"
         android:id="@+id/create_request"
-        android:src="@drawable/ic_question"
+        android:src="@drawable/ic_request"
         android:background="@drawable/ovalbutton"
         android:layout_marginTop="118dp"
         android:layout_below="@+id/tool_bar"

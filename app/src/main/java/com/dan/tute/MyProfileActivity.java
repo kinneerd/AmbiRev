@@ -23,6 +23,7 @@ public class MyProfileActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("My Profile");
     }
 
 
