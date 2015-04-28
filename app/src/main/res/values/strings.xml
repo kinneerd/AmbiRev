@@ -187,5 +187,7 @@
        <item>University Studies</item>
     </string-array>
     <string name="title_activity_make__request_">Make_Request_Activity</string>
+    <string name="title_activity_view_request">ViewRequestActivity</string>
+    <string name="title_activity_my_profile">MyProfileActivity</string>
 
 </resources>

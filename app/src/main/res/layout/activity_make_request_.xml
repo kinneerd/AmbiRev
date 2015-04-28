@@ -85,7 +85,7 @@
         android:id="@+id/requestPriceCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/requestTagCard"
+        android:layout_below="@+id/requestOfferLabel"
         android:layout_marginTop="10dp"
         style="@style/card"
         android:weightSum="1">
@@ -98,6 +98,18 @@
             android:prompt="@string/price"/>
     </LinearLayout>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Offer:"
+        android:layout_marginTop="49dp"
+        android:id="@+id/requestOfferLabel"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/requestTagsLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:layout_width="match_parent"

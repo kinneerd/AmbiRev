@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -69,6 +68,14 @@
         <activity
             android:name=".MakeRequestActivity"
             android:label="@string/title_activity_make__request_" >
+        </activity>
+        <activity
+            android:name="com.triofiddy.tute.ViewRequestActivity"
+            android:label="@string/title_activity_view_request" >
+        </activity>
+        <activity
+            android:name=".MyProfileActivity"
+            android:label="@string/title_activity_my_profile" >
         </activity>
     </application>
 
