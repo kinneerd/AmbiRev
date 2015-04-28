@@ -1,6 +1,9 @@
 package com.dan.tute;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,16 +12,33 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import butterknife.InjectView;
 
 public class MakeRequestActivity extends ActionBarActivity {
 
     @InjectView(R.id.offer_spinner) protected Spinner mDropdown_Offer_list;
+    @InjectView(R.id.descriptionField) protected TextView mRequest_description;
+    @InjectView(R.id.request_tag_1) protected TextView mRequest_Tag_1;
+    @InjectView(R.id.request_tag_2) protected TextView mRequest_Tag_2;
+    @InjectView(R.id.request_tag_3) protected TextView mRequest_Tag_3;
 
     private String[] prices;
     private TypedArray price_type;
-    private String price;
+    private String offer;
+
+    protected JSONParser jsonParser = new JSONParser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +58,7 @@ public class MakeRequestActivity extends ActionBarActivity {
         mDropdown_Offer_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                price = price_type.getString(mDropdown_Offer_list.getSelectedItemPosition());
+                offer = price_type.getString(mDropdown_Offer_list.getSelectedItemPosition());
             }
 
             @Override
@@ -69,5 +89,72 @@ public class MakeRequestActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    class AddRequestActivity extends AsyncTask<String, String, String> {
+        String phpMessage = "";
+        boolean updateSuccess;
+
+        protected void onPreExecute(){
+            super.onPreExecute();
+
+            updateSuccess = false;
+        }
+
+        protected String doInBackground(String... args) {
+
+            Intent intent = getIntent();
+
+            String currentEmail = SessionManager.getLoggedInEmailUser(getApplicationContext());
+
+            String tags = mRequest_Tag_1.getText().toString() + "," + mRequest_Tag_2.getText().toString() + "," + mRequest_Tag_3.getText().toString();
+
+
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("offer", offer));
+            params.add(new BasicNameValuePair("tags", tags));
+            params.add(new BasicNameValuePair("description", intent.getStringExtra("description")));
+            params.add(new BasicNameValuePair("email", currentEmail));
+
+            JSONObject json = jsonParser.makeHttpRequest(getResources().getString(R.string.add_request), "POST", params);
+
+            try{
+                int success = json.getInt("success");
+
+                if(success == 1){
+                    updateSuccess = true;
+
+                    Intent i = getIntent();
+                    setResult(100, i);
+                    finish();
+                }else{
+                    phpMessage = json.getString("message");
+                }
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+
+        protected void onPostExecute(String file_url){
+
+            Context context = getApplicationContext();
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast;
+
+            if(updateSuccess){
+                CharSequence text = "Successfully updated!";
+                toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }else{
+                CharSequence text = phpMessage;
+                toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

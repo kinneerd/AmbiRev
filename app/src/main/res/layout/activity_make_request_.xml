@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/bioField"
+        android:id="@+id/descriptionField"
         android:hint="What do you need help with?"
         android:gravity="top"
         android:isScrollContainer="true"
@@ -41,7 +41,7 @@
         android:layout_marginTop="49dp"
         android:id="@+id/requestTagsLabel"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/bioField"
+        android:layout_below="@+id/descriptionField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_1"
+            android:id="@+id/request_tag_1"
             android:hint="Accounting" />
 
         <EditText
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_2"
+            android:id="@+id/request_tag_2"
             android:hint="Business Calculus" />
 
         <EditText
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_3"
+            android:id="@+id/request_tag_3"
             android:hint="Economics" />
 
     </LinearLayout>

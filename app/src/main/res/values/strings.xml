@@ -3,6 +3,8 @@
 
 //PHP URLS
     <string name="upgrade_account">http://68.119.36.255/tute/upgradeAccount.php</string>
+    <string name="add_request">http://68.119.36.255/tute/makeRequest.php</string>
+    <string name="get_requests">http://68.119.36.255/tute/getRequests.php</string>
 
 // NAV DRAWER
     <string name="drawer_item_home">Home</string>

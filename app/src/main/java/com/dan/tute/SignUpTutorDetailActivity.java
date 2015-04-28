@@ -94,7 +94,7 @@ public class SignUpTutorDetailActivity extends ActionBarActivity {
 
             String experience = mTutor_Prof_1.getText().toString() + "," + mTutor_Prof_2.getText().toString() + "," + mTutor_Prof_3.getText().toString();
 
-            
+
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("major", intent.getStringExtra("major")));
             params.add(new BasicNameValuePair("tags", intent.getStringExtra("tags")));
