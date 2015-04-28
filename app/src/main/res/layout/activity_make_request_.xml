@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/bioField"
+        android:id="@+id/requestBioField"
         android:hint="What do you need help with?"
         android:gravity="top"
         android:isScrollContainer="true"
@@ -41,7 +41,7 @@
         android:layout_marginTop="49dp"
         android:id="@+id/requestTagsLabel"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/bioField"
+        android:layout_below="@+id/requestBioField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_1"
+            android:id="@+id/request_tag_1"
             android:hint="Accounting" />
 
         <EditText
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_2"
+            android:id="@+id/request_tag_2"
             android:hint="Business Calculus" />
 
         <EditText
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
             android:ems="10"
-            android:id="@+id/tutor_tag_3"
+            android:id="@+id/request_tag_3"
             android:hint="Economics" />
 
     </LinearLayout>
@@ -86,12 +86,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/requestOfferLabel"
-        android:layout_marginTop="10dp"
         style="@style/card"
         android:weightSum="1">
 
         <Spinner
-            android:id="@+id/price_spinner"
+            android:id="@+id/offer_spinner"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:spinnerMode="dropdown"
@@ -104,10 +103,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Offer:"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/requestOfferLabel"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/requestTagsLabel"
+        android:layout_below="@+id/requestTagCard"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -117,7 +116,7 @@
         android:text="Continue"
         android:id="@+id/tutor_continue_button"
         android:background="@drawable/button_custom"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>

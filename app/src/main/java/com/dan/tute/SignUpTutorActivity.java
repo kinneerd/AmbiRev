@@ -4,25 +4,21 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class SignUpTutorActivity extends ActionBarActivity {
 
-      @InjectView(R.id.bioField) protected TextView mTutor_Bio;
+      @InjectView(R.id.requestBioField) protected TextView mTutor_Bio;
       @InjectView(R.id.tutor_tag_1) protected TextView mTutor_Tag_1;
       @InjectView(R.id.tutor_tag_2) protected TextView mTutor_Tag_2;
       @InjectView(R.id.tutor_tag_3) protected TextView mTutor_Tag_3;
