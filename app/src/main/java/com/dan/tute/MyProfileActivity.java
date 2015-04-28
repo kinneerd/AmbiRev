@@ -41,11 +41,19 @@ public class MyProfileActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         switch(id) {
-            case R.id.action_edit_profile:
-                Intent intent = new Intent(getApplicationContext(),EditBasicProfile.class);
-                String user_email = SessionManager.getLoggedInEmailUser(getApplicationContext());
-                intent.putExtra("email",user_email);
+            case R.id.action_logout:
+                SessionManager.clearUserSharedPreferences(getApplicationContext());
+                //navigateToLogin();
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                break;
+            case R.id.action_edit_profile:
+                Intent intent1 = new Intent(getApplicationContext(),EditBasicProfile.class);
+                String user_email = SessionManager.getLoggedInEmailUser(getApplicationContext());
+                intent1.putExtra("email",user_email);
+                startActivity(intent1);
                 break;
         }
 

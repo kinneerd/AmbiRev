@@ -105,17 +105,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-/*
-        mEdit_Profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),EditBasicProfile.class);
-                String user_email = SessionManager.getLoggedInEmailUser(getApplicationContext());
-                intent.putExtra("email",user_email);
-                startActivity(intent);
-            }
-        });
-*/
+
         mSignUpTutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,11 +113,9 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
-    private void navigateToLogin() {
+    public void navigateToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
