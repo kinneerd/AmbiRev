@@ -21,8 +21,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-import org.w3c.dom.Text;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -170,6 +168,10 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_logout:
                 SessionManager.clearUserSharedPreferences(getApplicationContext());
                 navigateToLogin();
+                break;
+            case R.id.action_user:
+                Intent intent = new Intent(getApplicationContext(),MyProfileActivity.class);
+                startActivity(intent);
                 break;
         }
 

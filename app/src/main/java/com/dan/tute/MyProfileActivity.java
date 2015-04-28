@@ -1,18 +1,28 @@
 package com.dan.tute;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dan.tute.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class MyProfileActivity extends ActionBarActivity {
+
+    @InjectView(R.id.tool_bar) protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
+        ButterKnife.inject(this);
+
+        setSupportActionBar(toolbar);
     }
 
 
@@ -30,9 +40,13 @@ public class MyProfileActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch(id) {
+            case R.id.action_edit_profile:
+                Intent intent = new Intent(getApplicationContext(),EditBasicProfile.class);
+                String user_email = SessionManager.getLoggedInEmailUser(getApplicationContext());
+                intent.putExtra("email",user_email);
+                startActivity(intent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
