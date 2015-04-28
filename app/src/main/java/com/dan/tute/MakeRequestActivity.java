@@ -8,13 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import butterknife.InjectView;
 
 public class MakeRequestActivity extends ActionBarActivity {
 
+
+    @InjectView(R.id.requestBioField) protected EditText request;
     @InjectView(R.id.offer_spinner) protected Spinner mDropdown_Offer_list;
+    @InjectView(R.id.request_tag_1) protected EditText request_tag_1;
+    @InjectView(R.id.request_tag_2) protected EditText request_tag_2;
+    @InjectView(R.id.request_tag_3) protected EditText request_tag_3;
 
     private String[] prices;
     private TypedArray price_type;
