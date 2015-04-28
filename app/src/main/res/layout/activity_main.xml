@@ -19,8 +19,9 @@
         android:id="@+id/search_tutor"
         android:src="@drawable/ic_action"
         android:background="@drawable/ovalbutton"
-        android:layout_alignTop="@+id/create_request"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/create_request"
+        android:layout_centerHorizontal="true"/>
 
     <ImageButton style="@style/AppTheme"
         android:layout_width="70dp"
@@ -29,25 +30,9 @@
         android:id="@+id/create_request"
         android:src="@drawable/ic_question"
         android:background="@drawable/ovalbutton"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="34dp"
-        android:layout_marginEnd="34dp"
+        android:layout_marginTop="118dp"
         android:layout_below="@+id/tool_bar"
-        android:layout_toLeftOf="@+id/search_tutor"
-        android:layout_toStartOf="@+id/search_tutor" />
-
-    <ImageButton style="@style/AppTheme"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:text="New Button"
-        android:id="@+id/view_profile"
-        android:src="@drawable/ic_person"
-        android:background="@drawable/ovalbutton"
-        android:layout_alignTop="@+id/search_tutor"
-        android:layout_toRightOf="@+id/search_tutor"
-        android:layout_toEndOf="@+id/search_tutor"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
