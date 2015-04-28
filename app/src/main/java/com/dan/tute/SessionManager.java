@@ -1,6 +1,7 @@
 package com.dan.tute;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -40,5 +41,12 @@ public class SessionManager {
         SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
         editor.clear();
         editor.commit();
+    }
+
+    public static void navigateToLogin(Context ctx){
+        Intent intent = new Intent(ctx, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        ctx.startActivity(intent);
     }
 }

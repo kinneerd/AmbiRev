@@ -115,12 +115,14 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
+    /* Moved to SessionManager
     public void navigateToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+    /*
 
     /*
     Uses SessionManager to check whether user is currently logged in
@@ -129,12 +131,9 @@ public class MainActivity extends ActionBarActivity {
     private void setupUser() {
         if(SessionManager.getUserLoggedInStatus(getApplicationContext())) {
             String email = SessionManager.getLoggedInEmailUser(getApplicationContext());
-            //Intent intent = new Intent(getApplicationContext(), EditBasicProfile.class);
-            //intent.putExtra("email", email);
-            //startActivity(intent);
         }else {
             // Not logged in
-            navigateToLogin();
+            SessionManager.navigateToLogin(getApplicationContext());
         }
     }
 
@@ -155,7 +154,8 @@ public class MainActivity extends ActionBarActivity {
         switch(id) {
             case R.id.action_logout:
                 SessionManager.clearUserSharedPreferences(getApplicationContext());
-                navigateToLogin();
+                //navigateToLogin();
+                SessionManager.navigateToLogin(getApplicationContext());
                 break;
             case R.id.action_user:
                 Intent intent = new Intent(getApplicationContext(),MyProfileActivity.class);

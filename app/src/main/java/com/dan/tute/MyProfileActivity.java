@@ -44,11 +44,7 @@ public class MyProfileActivity extends ActionBarActivity {
         switch(id) {
             case R.id.action_logout:
                 SessionManager.clearUserSharedPreferences(getApplicationContext());
-                //navigateToLogin();
-                Intent intent = new Intent(this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+                SessionManager.navigateToLogin(getApplicationContext());
                 break;
             case R.id.action_edit_profile:
                 Intent intent1 = new Intent(getApplicationContext(),EditBasicProfile.class);
