@@ -11,4 +11,74 @@
         layout="@layout/tool_bar"
         ></include>
 
+    <ImageView
+        android:id="@+id/viewProfileImage"
+        android:src = "@drawable/defaultsmallpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:maxHeight="100dip"
+        android:maxWidth="250dip"
+        android:minHeight="100dip"
+        android:minWidth="250dip"
+        android:resizeMode="horizontal|vertical"
+        android:contentDescription="@string/default_profile_image"
+        android:layout_marginTop="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/profName"
+        android:text="@string/profile_name_placeholder"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/viewProfileImage"
+        android:layout_gravity="center|left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Major:"
+        android:id="@+id/profMajorTag"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_below="@id/profName"
+        android:gravity="left"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/profMajor"
+        android:text="@string/profile_major_placeholder"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/profMajorTag"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/profDesc"
+        android:text="@string/filler"
+        android:textColor="@android:color/white"
+        android:textColorHint="#b4ffffff"
+        android:layout_below="@+id/profMajor"
+        android:layout_alignLeft="@+id/profMajorTag"
+        android:layout_alignStart="@+id/profMajorTag"
+        android:layout_alignRight="@+id/profMajor"
+        android:layout_alignEnd="@+id/profMajor"
+        android:layout_marginTop="25dp"/>
+
 </RelativeLayout>

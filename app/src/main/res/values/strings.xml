@@ -37,6 +37,10 @@
     <string name="password_create_hint">Create a password</string>
     <string name="tutor_description">What makes you a good tutor?</string>
 
+// MY PROFILE PAGE
+    <string name="profile_name_placeholder">Dan</string>
+    <string name="profile_major_placeholder">Computer Science</string>
+
 //EDIT PROFILE PAGE
     <string name="title_activity_edit_basic_profile">EditBasicProfile</string>
     <string name="change_first_name">First Name</string>

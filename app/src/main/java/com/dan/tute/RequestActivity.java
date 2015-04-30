@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,14 +27,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class RequestActivity extends ListActivity {
 
     protected ArrayList<HashMap<String,String>> requests = new ArrayList<HashMap<String,String>>();
+
+    @InjectView(R.id.tool_bar) protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
+        ButterKnife.inject(this);
+
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setTitle("Active Requests");
 
         new LoadRequestsList().execute();
 
