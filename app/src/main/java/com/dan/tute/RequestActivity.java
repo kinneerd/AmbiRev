@@ -34,7 +34,7 @@ public class RequestActivity extends ListActivity {
 
     protected ArrayList<HashMap<String,String>> requests = new ArrayList<HashMap<String,String>>();
 
-    @InjectView(R.id.tool_bar) protected Toolbar toolbar;
+    //@InjectView(R.id.tool_bar) protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

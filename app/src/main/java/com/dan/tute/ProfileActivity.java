@@ -171,7 +171,6 @@ public class ProfileActivity extends ActionBarActivity {
             return null;
         }
 
-
         protected void onPostExecute(String file_url) {
 
         }
@@ -211,12 +210,10 @@ public class ProfileActivity extends ActionBarActivity {
             return null;
         }
 
-
         protected void onPostExecute(String file_url) {
             Context context = getApplicationContext();
             int duration = Toast.LENGTH_SHORT;
             Toast toast;
-
 
             CharSequence text = "Request Sent!";
             toast = Toast.makeText(context, text, duration);
