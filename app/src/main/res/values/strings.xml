@@ -5,6 +5,7 @@
     <string name="upgrade_account">http://68.119.36.255/tute/upgradeAccount.php</string>
     <string name="add_request">http://68.119.36.255/tute/makeRequest.php</string>
     <string name="get_requests">http://68.119.36.255/tute/getRequests.php</string>
+    <string name="get_messages">http://68.119.36.255/tute/requestMessageList.php</string>
 
 // NAV DRAWER
     <string name="drawer_item_home">Home</string>
@@ -195,5 +196,6 @@
     <string name="title_activity_make__request_">Make_Request_Activity</string>
     <string name="title_activity_view_request">ViewRequestActivity</string>
     <string name="title_activity_my_profile">MyProfileActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
 
 </resources>

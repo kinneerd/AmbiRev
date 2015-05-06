@@ -55,11 +55,17 @@ public class RequestActivity extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 String emailClicked = ((TextView) view.findViewById(R.id.email)).getText().toString();
+                String firstName = ((TextView) view.findViewById(R.id.firstName)).getText().toString();
+                String description = ((TextView) view.findViewById(R.id.description)).getText().toString();
+                String offer = ((TextView) view.findViewById(R.id.offer)).getText().toString();
 
-                //Intent in = new Intent(getApplicationContext(), ProfileActivity.class);
-                //in.putExtra("email", emailClicked);
+                Intent in = new Intent(getApplicationContext(), ViewRequestActivity.class);
+                in.putExtra("email", emailClicked);
+                in.putExtra("offer", offer);
+                in.putExtra("firstName", firstName);
+                in.putExtra("description", description);
 
-                //startActivityForResult(in, 100);
+                startActivityForResult(in, 100);
             }
         });
     }

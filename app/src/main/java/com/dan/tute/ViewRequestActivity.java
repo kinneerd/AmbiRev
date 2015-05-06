@@ -1,18 +1,36 @@
 package com.dan.tute;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.dan.tute.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
+
 public class ViewRequestActivity extends ActionBarActivity {
+
+    @InjectView(R.id.name) protected TextView mFirstName;
+    @InjectView(R.id.offer) protected TextView mOffer;
+    @InjectView(R.id.description) protected TextView mDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_request);
+
+        Intent intent = getIntent();
+        ButterKnife.inject(this);
+
+        mFirstName.setText(intent.getStringExtra("firstName"));
+        mOffer.setText(intent.getStringExtra("offer"));
+        mDescription.setText(intent.getStringExtra("description"));
+
     }
 
 

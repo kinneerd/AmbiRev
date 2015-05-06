@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Dan"
-        android:id="@+id/textView"
+        android:id="@+id/name"
         android:textSize="40dp"
         android:textColor="@android:color/white"
         android:layout_marginTop="30dp"
@@ -39,12 +39,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="$5.00"
-        android:id="@+id/textView1"
-        android:layout_marginTop="76dp"
+        android:id="@+id/offer"
         android:textSize="50dp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/imageButton"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -52,11 +51,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Need help with integrals and derivatives"
-        android:id="@+id/textView2"
+        android:id="@+id/description"
         android:textSize="20dp"
         android:layout_marginTop="70dp"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="45dp"
@@ -71,8 +70,8 @@
         android:src="@drawable/check_action"
         android:background="@drawable/ovalbutton"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
         android:layout_marginBottom="55dp" />
 
 </RelativeLayout>

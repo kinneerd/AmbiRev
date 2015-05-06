@@ -26,7 +26,7 @@ public class MyProfileActivity extends ActionBarActivity {
 
     private String currentEmail;
 
-    private String url_load_tutor_profile = "http://68.119.36.255/tute/load_tutor_profile.php";
+    private String url_load_tutee_profile = "http://68.119.36.255/tute/load_tutee_profile.php";
 
     @InjectView(R.id.profName) protected TextView mName;
     @InjectView(R.id.profMajor) protected TextView mMajor;
@@ -93,7 +93,7 @@ public class MyProfileActivity extends ActionBarActivity {
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("email", currentEmail));
 
-            final JSONObject json = jsonParser.makeHttpRequest(url_load_tutor_profile, "POST", params);
+            final JSONObject json = jsonParser.makeHttpRequest(url_load_tutee_profile, "POST", params);
 
             runOnUiThread(new Runnable() {
                 //
@@ -103,6 +103,9 @@ public class MyProfileActivity extends ActionBarActivity {
                     try {
                         success = json.getInt("success");
                         if (success == 1) {
+                            if(!json.getString("firstName").equals("null")) {
+                                mName.setText(json.getString("firstName"));
+                            }
                             if(!json.getString("bio").equals("null")) {
                                 mDesc.setText(json.getString("bio"));
                             }
