@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class MakeRequestActivity extends ActionBarActivity {
@@ -33,6 +34,7 @@ public class MakeRequestActivity extends ActionBarActivity {
     @InjectView(R.id.request_tag_1) protected TextView mRequest_Tag_1;
     @InjectView(R.id.request_tag_2) protected TextView mRequest_Tag_2;
     @InjectView(R.id.request_tag_3) protected TextView mRequest_Tag_3;
+    @InjectView(R.id.tutor_continue_button) protected TextView mContinue;
 
     private String[] prices;
     private TypedArray price_type;
@@ -44,7 +46,7 @@ public class MakeRequestActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_request_);
-
+        ButterKnife.inject(this);
 
 
         //create price spinner
@@ -64,6 +66,16 @@ public class MakeRequestActivity extends ActionBarActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        mContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RequestActivity.class);
+                new AddRequestActivity().execute();
+
+                startActivity(intent);
             }
         });
     }
@@ -111,9 +123,9 @@ public class MakeRequestActivity extends ActionBarActivity {
 
 
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("offer", offer));
+            params.add(new BasicNameValuePair("offer", offer.substring(1)));
             params.add(new BasicNameValuePair("tags", tags));
-            params.add(new BasicNameValuePair("description", intent.getStringExtra("description")));
+            params.add(new BasicNameValuePair("description", mRequest_description.getText().toString()));
             params.add(new BasicNameValuePair("email", currentEmail));
 
             JSONObject json = jsonParser.makeHttpRequest(getResources().getString(R.string.add_request), "POST", params);
