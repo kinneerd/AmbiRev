@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -35,6 +36,7 @@ public class RequestActivity extends ListActivity {
     protected ArrayList<HashMap<String,String>> requests = new ArrayList<HashMap<String,String>>();
 
     //@InjectView(R.id.tool_bar) protected Toolbar toolbar;
+    @InjectView(R.id.requestButton) protected Button mRequestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,14 @@ public class RequestActivity extends ListActivity {
         //getSupportActionBar().setTitle("Active Requests");
 
         new LoadRequestsList().execute();
+
+        mRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MakeRequestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ListView lv = getListView();
 
