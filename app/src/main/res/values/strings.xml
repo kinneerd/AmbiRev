@@ -7,6 +7,7 @@
     <string name="get_requests">http://68.119.36.255/tute/getRequests.php</string>
     <string name="get_messages">http://68.119.36.255/tute/requestMessageList.php</string>
     <string name="accept_request">http://68.119.36.255/tute/acceptRequest.php</string>
+    <string name="send_message">http://68.119.36.255/tute/sendMessage.php</string>
 
 // NAV DRAWER
     <string name="drawer_item_home">Home</string>
