@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ import butterknife.InjectView;
 public class ViewMessageActivity extends ActionBarActivity {
 
     @InjectView(R.id.message) protected TextView mMessage;
+    @InjectView(R.id.replyButton) protected Button mButton;
 
     protected String senderEmail;
     private String newMessage;
@@ -44,6 +47,13 @@ public class ViewMessageActivity extends ActionBarActivity {
 
         mMessage.setText(intent.getStringExtra("message"));
         senderEmail = intent.getStringExtra("senderEmail");
+
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage();
+            }
+        });
     }
 
 
