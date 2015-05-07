@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
 
     @InjectView(R.id.create_request) protected ImageButton mCreate_Request;
     @InjectView(R.id.search_tutor) protected ImageButton mSearch_tutor;
+    @InjectView(R.id.view_messages) protected ImageButton mView_Messages;
    // @InjectView(R.id.edit_profile) protected Button mEdit_Profile;
     @InjectView(R.id.tool_bar) protected Toolbar toolbar;
     @InjectView(R.id.tutorSignUp) protected TextView mSignUpTutor;
@@ -102,6 +103,14 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mView_Messages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MessageActivity.class);
                 startActivity(intent);
             }
         });

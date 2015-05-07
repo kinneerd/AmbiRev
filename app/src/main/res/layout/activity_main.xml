@@ -34,6 +34,17 @@
         android:layout_below="@+id/tool_bar"
         android:layout_centerHorizontal="true"/>
 
+    <ImageButton style="@style/AppTheme"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="New Button"
+        android:id="@+id/view_messages"
+        android:src="@drawable/ic_request"
+        android:background="@drawable/ovalbutton"
+        android:layout_marginTop="54dp"
+        android:layout_below="@+id/search_tutor"
+        android:layout_centerHorizontal="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

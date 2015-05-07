@@ -68,12 +68,14 @@ public class RequestActivity extends ListActivity {
                 String firstName = ((TextView) view.findViewById(R.id.firstName)).getText().toString();
                 String description = ((TextView) view.findViewById(R.id.description)).getText().toString();
                 String offer = ((TextView) view.findViewById(R.id.offer)).getText().toString();
+                String requestID = ((TextView) view.findViewById(R.id.requestID)).getText().toString();
 
                 Intent in = new Intent(getApplicationContext(), ViewRequestActivity.class);
                 in.putExtra("email", emailClicked);
                 in.putExtra("offer", offer);
                 in.putExtra("firstName", firstName);
                 in.putExtra("description", description);
+                in.putExtra("requestID", requestID);
 
                 startActivityForResult(in, 100);
             }
@@ -135,6 +137,7 @@ public class RequestActivity extends ListActivity {
                                 m.put("email", t.getString("email"));
                                 m.put("offer", t.getString("offer"));
                                 m.put("description", t.getString("description"));
+                                m.put("requestID", t.getString("requestID"));
 
                                 requests.add(m);
                             }
@@ -156,8 +159,8 @@ public class RequestActivity extends ListActivity {
 
                     ListAdapter adapter = new SimpleAdapter(
                             RequestActivity.this, requests,
-                            R.layout.request_list_item, new String[] {"email", "firstName", "offer", "description"},
-                            new int[] { R.id.email,R.id.firstName,R.id.offer,R.id.description,});
+                            R.layout.request_list_item, new String[] {"email", "firstName", "offer", "description", "requestID"},
+                            new int[] { R.id.email,R.id.firstName,R.id.offer,R.id.description,R.id.requestID});
 
                     setListAdapter(adapter);
                 }
