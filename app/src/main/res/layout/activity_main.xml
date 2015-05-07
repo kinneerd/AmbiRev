@@ -11,6 +11,17 @@
         layout="@layout/tool_bar"
         ></include>
 
+    <ImageButton style="@style/AppTheme"
+                 android:layout_width="70dp"
+                 android:layout_height="70dp"
+                 android:text="New Button"
+                 android:id="@+id/create_request"
+                 android:src="@drawable/ic_request"
+                 android:background="@drawable/ovalbutton"
+                 android:layout_marginTop="75dp"
+                 android:layout_below="@+id/tool_bar"
+                 android:layout_centerHorizontal="true"/>
+
 
     <ImageButton style="@style/AppTheme"
         android:layout_width="70dp"
@@ -19,19 +30,8 @@
         android:id="@+id/search_tutor"
         android:src="@drawable/ic_action"
         android:background="@drawable/ovalbutton"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="50dp"
         android:layout_below="@+id/create_request"
-        android:layout_centerHorizontal="true"/>
-
-    <ImageButton style="@style/AppTheme"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:text="New Button"
-        android:id="@+id/create_request"
-        android:src="@drawable/ic_request"
-        android:background="@drawable/ovalbutton"
-        android:layout_marginTop="118dp"
-        android:layout_below="@+id/tool_bar"
         android:layout_centerHorizontal="true"/>
 
     <ImageButton style="@style/AppTheme"
@@ -41,7 +41,7 @@
         android:id="@+id/view_messages"
         android:src="@drawable/ic_messaging"
         android:background="@drawable/ovalbutton"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/search_tutor"
         android:layout_centerHorizontal="true" />
 

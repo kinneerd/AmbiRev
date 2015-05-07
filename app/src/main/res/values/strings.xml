@@ -202,5 +202,6 @@
     <string name="title_activity_my_profile">MyProfileActivity</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_view_message">ViewMessageActivity</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

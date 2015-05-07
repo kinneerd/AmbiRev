@@ -1,7 +1,6 @@
 package com.dan.tute;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,15 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
@@ -56,37 +51,37 @@ public class MainActivity extends ActionBarActivity {
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_home).withIcon(R.drawable.ic_home),
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_home).withIcon(R.drawable.ic_home).withIdentifier(1),
                         new DividerDrawerItem(),
                         //new PrimaryDrawerItem().withName(R.string.drawer_item_search).withIcon(R.drawable.ic_search),
                         //new PrimaryDrawerItem().withName(R.string.drawer_item_request).withIcon(R.drawable.ic_request),
                         //new PrimaryDrawerItem().withName(R.string.drawer_item_recent).withIcon(R.drawable.ic_recent),
-                        new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(R.drawable.ic_settings)
-                )/*
-                .withOnDrawerListener(new Drawer.OnDrawerListener() {
-                    @Override
-                    public void onDrawerOpened(View drawerView) {
-                        Toast.makeText(MainActivity.this, "onDrawerOpened", Toast.LENGTH_SHORT).show();
-                        //drawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
-                        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                    }
-
-                    @Override
-                    public void onDrawerClosed(View drawerView) {
-                        Toast.makeText(MainActivity.this, "onDrawerClosed", Toast.LENGTH_SHORT).show();
-                        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-                        //drawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
-                    }
-                })
-                */
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(R.drawable.ic_settings).withIdentifier(2)
+                )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
-                        // do something with the clicked item :D
+                        if (drawerItem != null) {
+                            Intent intent = null;
+                            if (drawerItem.getIdentifier() == 1) {
+                                intent = new Intent(MainActivity.this, MainActivity.class);
+                            } else if (drawerItem.getIdentifier() == 2) {
+                                intent = new Intent(MainActivity.this, SettingsActivity.class);
+                            }
+                            if (intent != null) {
+                                MainActivity.this.startActivity(intent);
+                            }
+                        }
                     }
                 })
+                .withSavedInstance(savedInstanceState)
                 .build();
+
+        //only set the active selection or active profile if we do not recreate the activity
+        if (savedInstanceState == null) {
+            // set the selection to the item with the identifier 10
+            drawer.setSelectionByIdentifier(10, false);
+        }
 
         setupUser();
 

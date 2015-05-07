@@ -7,9 +7,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dan.tute.R;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -34,20 +42,54 @@ public class MyProfileActivity extends ActionBarActivity {
 
     @InjectView(R.id.tool_bar) protected Toolbar toolbar;
 
+    protected Drawer.Result drawer = null;
+
     protected JSONParser jsonParser;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_my_profile);
+
             ButterKnife.inject(this);
 
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle("My Profile");
 
+            // Creating Navigation Drawer
+            drawer = new Drawer()
+                    .withActivity(this)
+                    .withToolbar(toolbar)
+                    .addDrawerItems(
+                            new SecondaryDrawerItem().withName(R.string.drawer_item_home).withIcon(R.drawable.ic_home).withIdentifier(1),
+                            new DividerDrawerItem(),
+                            //new PrimaryDrawerItem().withName(R.string.drawer_item_search).withIcon(R.drawable.ic_search),
+                            //new PrimaryDrawerItem().withName(R.string.drawer_item_request).withIcon(R.drawable.ic_request),
+                            //new PrimaryDrawerItem().withName(R.string.drawer_item_recent).withIcon(R.drawable.ic_recent),
+                            new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(R.drawable.ic_settings).withIdentifier(2)
+                    )
+                    .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
+                            if (drawerItem != null) {
+                                Intent intent = null;
+                                if (drawerItem.getIdentifier() == 1) {
+                                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                                } else if (drawerItem.getIdentifier() == 2) {
+                                    intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                                }
+                                if (intent != null) {
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    })
+                    .withSavedInstance(savedInstanceState)
+                    .build();
+
             currentEmail = SessionManager.getLoggedInEmailUser(getApplicationContext());
 
-            jsonParser = new JSONParser();
+            jsonParser =new JSONParser();
 
             new LoadProfileInformationActivity().execute();
     }
