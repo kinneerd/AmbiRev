@@ -32,6 +32,7 @@ import butterknife.InjectView;
 public class ViewMessageActivity extends ActionBarActivity {
 
     @InjectView(R.id.message) protected TextView mMessage;
+    @InjectView(R.id.name) protected TextView mName;
     @InjectView(R.id.replyButton) protected Button mButton;
 
     protected String senderEmail;
@@ -46,6 +47,7 @@ public class ViewMessageActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         mMessage.setText(intent.getStringExtra("message"));
+        mName.setText(intent.getStringExtra("firstName"));
         senderEmail = intent.getStringExtra("senderEmail");
 
         mButton.setOnClickListener(new View.OnClickListener() {

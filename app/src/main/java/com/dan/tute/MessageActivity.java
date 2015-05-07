@@ -49,10 +49,12 @@ public class MessageActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+                String firstName = ((TextView) view.findViewById(R.id.firstName)).getText().toString();
                 String senderEmail = ((TextView) view.findViewById(R.id.senderEmail)).getText().toString();
                 String message = ((TextView) view.findViewById(R.id.message)).getText().toString();
 
                 Intent in = new Intent(getApplicationContext(), ViewMessageActivity.class);
+                in.putExtra("firstName", firstName);
                 in.putExtra("senderEmail", senderEmail);
                 in.putExtra("message", message);
 
@@ -114,6 +116,7 @@ public class MessageActivity extends ListActivity {
                                 JSONObject t = jsonTutors.getJSONObject(i);
 
                                 HashMap m = new HashMap<String,String>();
+                                m.put("firstName", t.getString("firstName"));
                                 m.put("senderEmail", t.getString("senderEmail"));
                                 m.put("message", t.getString("message"));
 
@@ -137,8 +140,8 @@ public class MessageActivity extends ListActivity {
 
                     ListAdapter adapter = new SimpleAdapter(
                             MessageActivity.this, requests,
-                            R.layout.message_list_item, new String[] {"message", "senderEmail"},
-                            new int[] {R.id.message,R.id.senderEmail});
+                            R.layout.message_list_item, new String[] {"firstName","message", "senderEmail"},
+                            new int[] {R.id.firstName,R.id.message,R.id.senderEmail});
 
                     setListAdapter(adapter);
                 }
