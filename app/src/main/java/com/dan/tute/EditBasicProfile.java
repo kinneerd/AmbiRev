@@ -203,9 +203,9 @@ public class EditBasicProfile extends ActionBarActivity {
                 CharSequence text = "Successfully updated!";
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
+                Intent refresh = new Intent(getApplicationContext(),MyProfileActivity.class);
+                startActivity(refresh);
                 finish();
-                Intent intent = new Intent(getApplicationContext(),MyProfileActivity.class);
-                startActivity(intent);
             }else{
                 CharSequence text = phpMessage;
                 toast = Toast.makeText(context, text, duration);
