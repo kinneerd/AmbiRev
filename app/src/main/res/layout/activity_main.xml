@@ -39,7 +39,7 @@
         android:layout_height="70dp"
         android:text="New Button"
         android:id="@+id/view_messages"
-        android:src="@drawable/ic_request"
+        android:src="@drawable/ic_messaging"
         android:background="@drawable/ovalbutton"
         android:layout_marginTop="54dp"
         android:layout_below="@+id/search_tutor"
